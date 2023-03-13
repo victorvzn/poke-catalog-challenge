@@ -3,9 +3,7 @@ import { render, screen, cleanup } from '@testing-library/react'
 import { describe, it, beforeEach, expect, vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
-export interface PokemonFilter {
-  name: string
-}
+import { PokemonFilter } from '../types'
 
 const INITIAL_STATE = {
   name: ''
