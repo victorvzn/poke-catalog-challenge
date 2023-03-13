@@ -24,5 +24,8 @@
     "vite": "4.0.3",
     "vite-plugin-ssr": "0.4.93"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "ts-standard": "12.0.2"
+  }
 }
