@@ -10,4 +10,15 @@ describe('Pokemons', () => {
   it('should render', () => {
     render(<Pokemons />)
   })
+
+  it('should render a pokemon name', () => {
+    const pokemons = [{
+      id: 1,
+      name: 'pokemon one'
+    }]
+
+    render(<Pokemons pokemons={pokemons} />)
+
+    screen.getByText('pokemon one')
+  })
 })
