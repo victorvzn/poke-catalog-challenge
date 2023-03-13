@@ -1,7 +1,6 @@
 import React from 'react'
-export { Page }
 
-function Page() {
+export const Page: React.FC = () => {
   return (
     <>
       <h1>Poké Catalog Challenge</h1>

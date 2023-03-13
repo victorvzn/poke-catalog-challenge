@@ -5,11 +5,10 @@ import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import logoUrl from './logo.svg'
 import type { PageContextServer } from './types'
 
-export { render }
 // See https://vite-plugin-ssr.com/data-fetching
 export const passToClient = ['pageProps', 'urlPathname']
 
-async function render(pageContext: PageContextServer) {
+export async function render (pageContext: PageContextServer) {
   const { Page, pageProps } = pageContext
   const pageHtml = ReactDOMServer.renderToString(
     <PageShell pageContext={pageContext}>
@@ -19,8 +18,8 @@ async function render(pageContext: PageContextServer) {
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports
-  const title = (documentProps && documentProps.title) || 'Vite SSR app'
-  const desc = (documentProps && documentProps.description) || 'App using Vite + vite-plugin-ssr'
+  const title = ((documentProps != null) && documentProps.title) || 'Vite SSR app'
+  const desc = ((documentProps != null) && documentProps.description) || 'App using Vite + vite-plugin-ssr'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">

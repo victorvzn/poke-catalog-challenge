@@ -5,19 +5,17 @@ import type { PageContext } from './types'
 import './PageShell.css'
 import { Link } from './Link'
 
-export { PageShell }
-
-function PageShell({ children, pageContext }: { children: React.ReactNode; pageContext: PageContext }) {
+export function PageShell ({ children, pageContext }: { children: React.ReactNode, pageContext: PageContext }) {
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
         <Layout>
           <Sidebar>
             <Logo />
-            <Link className="navitem" href="/">
+            <Link className='navitem' href='/'>
               Home
             </Link>
-            <Link className="navitem" href="/about">
+            <Link className='navitem' href='/about'>
               About
             </Link>
           </Sidebar>
@@ -28,7 +26,7 @@ function PageShell({ children, pageContext }: { children: React.ReactNode; pageC
   )
 }
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout ({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
@@ -42,7 +40,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Sidebar({ children }: { children: React.ReactNode }) {
+function Sidebar ({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
@@ -59,7 +57,7 @@ function Sidebar({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Content({ children }: { children: React.ReactNode }) {
+function Content ({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
@@ -74,7 +72,7 @@ function Content({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Logo() {
+function Logo () {
   return (
     <div
       style={{
@@ -82,8 +80,8 @@ function Logo() {
         marginBottom: 10
       }}
     >
-      <a href="/">
-        <img src={logo} height={64} width={64} alt="logo" />
+      <a href='/'>
+        <img src={logo} height={64} width={64} alt='logo' />
       </a>
     </div>
   )
