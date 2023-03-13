@@ -12,7 +12,7 @@ interface Props {
 
 export const Pokemons: React.FC<Props> = ({ pokemons }) => {
   return (
-    <div>pokemon one</div>
+    <div>{pokemons[0]?.name}</div>
   )
 }
 
