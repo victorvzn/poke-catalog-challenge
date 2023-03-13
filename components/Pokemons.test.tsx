@@ -1,14 +1,13 @@
 import React from 'react'
 import { render, screen, cleanup, fireEvent } from '@testing-library/react'
 import { describe, it, beforeEach, expect } from 'vitest'
-import { before } from 'node:test'
 
 export interface Pokemon {
   name: string
 }
 
 interface Props {
-  pokemons?: Pokemon[]
+  pokemons: Pokemon[]
 }
 
 export const Pokemons: React.FC<Props> = ({ pokemons }) => {
@@ -21,7 +20,7 @@ describe('Pokemons', () => {
   beforeEach(cleanup)
 
   it('should render', () => {
-    render(<Pokemons />)
+    render(<Pokemons pokemons={[]} />)
   })
 
   it('should render a pokemon name', () => {
@@ -32,5 +31,15 @@ describe('Pokemons', () => {
     render(<Pokemons pokemons={mockPokemons} />)
 
     screen.getByText('pokemon one')
+  })
+
+  it('should render another pokemon', () => {
+    const mockPokemons = [{
+      name: 'pokemon two'
+    }]
+
+    render(<Pokemons pokemons={mockPokemons} />)
+
+    screen.getByText('pokemon two')
   })
 })
