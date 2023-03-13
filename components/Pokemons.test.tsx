@@ -89,4 +89,29 @@ describe('Pokemons', () => {
 
     expect(image.getAttribute('src')).toBe('pokemon-one-url')
   })
+
+  it('should render multiple pokemon with its url image each one', () => {
+    const pokemons = [
+      {
+        id: 1,
+        name: 'pokemon one',
+        imageUrl: 'pokemon-one-url'
+      },
+      {
+        id: 2,
+        name: 'pokemon two',
+        imageUrl: 'pokemon-two-url'
+      }
+    ]
+
+    render(<Pokemons pokemons={pokemons} />)
+
+    const images = screen.getAllByRole('img')
+
+    const firstImage = images.at(0)
+    const secondImage = images.at(1)
+
+    expect(firstImage?.getAttribute('src')).toBe('pokemon-one-url')
+    expect(secondImage?.getAttribute('src')).toBe('pokemon-two-url')
+  })
 })
