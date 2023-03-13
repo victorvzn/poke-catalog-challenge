@@ -67,4 +67,22 @@ describe('Pokemons', () => {
     screen.getByText('pokemon one')
     screen.getByText('pokemon two')
   })
+
+  it('should render a pokemon with its url image', async () => {
+    const pokemons = [
+      {
+        id: 1,
+        name: 'pokemon one',
+        imageUrl: 'pokemon-one-url'
+      }
+    ]
+
+    render(<Pokemons pokemons={pokemons} />)
+
+    screen.getByText('pokemon one')
+
+    const image = screen.getByRole('img')
+
+    expect(image.getAttribute('src')).toBe('pokemon-one-url')
+  })
 })
