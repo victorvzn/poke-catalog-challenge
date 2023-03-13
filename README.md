@@ -11,7 +11,7 @@
 Realizar un catálogo de elementos usando una API pública que cumpla con los siguientes criterios:
 
 * [x] Tener Server Side Render (SSR) con Express.js
-* [ ] Las peticiones al API para la carga inicial deben hacerse desde Node
+* [x] Las peticiones al API para la carga inicial deben hacerse desde Node
 * [ ] Tener una barra de busqueda que permita encontrar elementos dentro de la lista y mostrarlos al usuario.
 * [ ] Poder filtrar y organizar los elementos de dicha lista.
 * [ ] Poder agregar items a una lista de favoritos (no necesariamente debe persistirse esta lista, pero es deseable).
