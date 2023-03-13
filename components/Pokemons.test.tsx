@@ -3,6 +3,7 @@ import { render, screen, cleanup, fireEvent } from '@testing-library/react'
 import { describe, it, beforeEach, expect } from 'vitest'
 
 export interface Pokemon {
+  id: number
   name: string
 }
 
@@ -14,7 +15,7 @@ export const Pokemons: React.FC<Props> = ({ pokemons }) => {
   return (
     <>
       {pokemons?.map(pokemon => (
-        <div key={pokemon.name}>{pokemon.name}</div>
+        <div key={pokemon.id}>{pokemon.name}</div>
       ))}
     </>
   )
@@ -29,6 +30,7 @@ describe('Pokemons', () => {
 
   it('should render a pokemon name', () => {
     const mockPokemons = [{
+      id: 1,
       name: 'pokemon one'
     }]
 
@@ -39,6 +41,7 @@ describe('Pokemons', () => {
 
   it('should render another pokemon', () => {
     const mockPokemons = [{
+      id: 1,
       name: 'pokemon two'
     }]
 
