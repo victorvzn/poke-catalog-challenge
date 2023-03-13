@@ -4,7 +4,9 @@
     "prod": "npm run build && npm run server:prod",
     "build": "vite build",
     "server": "ts-node ./server/index.ts",
-    "server:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts"
+    "server:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@types/compression": "1.7.2",
@@ -26,6 +28,10 @@
   },
   "type": "module",
   "devDependencies": {
-    "ts-standard": "12.0.2"
+    "@testing-library/react": "14.0.0",
+    "@testing-library/user-event": "14.4.3",
+    "jsdom": "21.1.1",
+    "ts-standard": "12.0.2",
+    "vitest": "0.29.2"
   }
 }
