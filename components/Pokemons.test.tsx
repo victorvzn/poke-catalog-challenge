@@ -12,7 +12,11 @@ interface Props {
 
 export const Pokemons: React.FC<Props> = ({ pokemons }) => {
   return (
-    <div>{pokemons[0]?.name}</div>
+    <>
+      {pokemons?.map(pokemon => (
+        <div key={pokemon.name}>{pokemon.name}</div>
+      ))}
+    </>
   )
 }
 
