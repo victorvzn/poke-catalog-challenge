@@ -2,15 +2,15 @@
 
 ### Puntos adicionales
 
-* [ ] Instalar linter para manejo de errores y formato de código
-* [ ] Instalación del testing environment
+* [x] Instalar linter para manejo de errores y formato de código
+* [x] Instalación del testing environment
 * [ ] Instalación de SAAS
 
 ### Objetivos del reto
 
 Realizar un catálogo de elementos usando una API pública que cumpla con los siguientes criterios:
 
-* [ ] Tener Server Side Render (SSR) con Express.js
+* [x] Tener Server Side Render (SSR) con Express.js
 * [ ] Las peticiones al API para la carga inicial deben hacerse desde Node
 * [ ] Tener una barra de busqueda que permita encontrar elementos dentro de la lista y mostrarlos al usuario.
 * [ ] Poder filtrar y organizar los elementos de dicha lista.
@@ -28,10 +28,10 @@ Adicionalmente la aplicación web debe contar con:
 
 Tecnologías a utilizar:
 
-* [ ] React
+* [x] React
 * [ ] Manejador de estados (a consideración)
 * [ ] Pre procesador de CSS
-* [ ] Express.js
+* [x] Express.js
 
 * [ ] Hacer despliegue en Heroku o cualquier servicio similar
 * [ ] (recuerda incluir el link al despliegue en el README o descripción del proyecto).
