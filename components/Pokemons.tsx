@@ -10,7 +10,8 @@ export const Pokemons: React.FC<Props> = ({ pokemons }) => {
   return (
     <>
       {pokemons?.map(pokemon => {
-        const pokemonTypes = pokemon.types?.map(pok => pok.name)
+        const pokemonTypes = pokemon.types?.map(type => type.name)
+
         return (
           <div key={pokemon.id}>
             {pokemon.name}
