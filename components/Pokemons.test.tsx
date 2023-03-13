@@ -42,4 +42,22 @@ describe('Pokemons', () => {
 
     screen.getByText('pokemon two')
   })
+
+  it('should render multiple pokemon names', () => {
+    const pokemons = [
+      {
+        id: 1,
+        name: 'pokemon one'
+      },
+      {
+        id: 2,
+        name: 'pokemon two'
+      }
+    ]
+
+    render(<Pokemons pokemons={pokemons} />)
+
+    screen.getByText('pokemon one')
+    screen.getByText('pokemon two')
+  })
 })
