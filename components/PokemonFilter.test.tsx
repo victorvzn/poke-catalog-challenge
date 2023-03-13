@@ -11,4 +11,18 @@ describe('PokemonSearch', () => {
   it('should render', () => {
     render(<PokemonSearch />)
   })
+
+  it('should allow writing text in a text box', async () => {
+    const user = userEvent.setup()
+
+    render(<PokemonSearch />)
+
+    const input = screen.getByPlaceholderText('Name or number')
+
+    await user.type(input, 'oops{backspace}{backspace}{backspace}{backspace}geodude')
+
+    screen.debug()
+
+    expect(input.getAttribute('value')).toBe('geodude')
+  })
 })
