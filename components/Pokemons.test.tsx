@@ -5,6 +5,7 @@ import { describe, it, beforeEach, expect } from 'vitest'
 export interface Pokemon {
   id: number
   name: string
+  imageUrl?: string
 }
 
 interface Props {
@@ -15,7 +16,10 @@ export const Pokemons: React.FC<Props> = ({ pokemons }) => {
   return (
     <>
       {pokemons?.map(pokemon => (
-        <div key={pokemon.id}>{pokemon.name}</div>
+        <div key={pokemon.id}>
+          {pokemon.name}
+          <img src={pokemon.imageUrl} />
+        </div>
       ))}
     </>
   )
