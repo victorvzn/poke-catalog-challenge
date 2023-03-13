@@ -114,4 +114,22 @@ describe('Pokemons', () => {
     expect(firstImage?.getAttribute('src')).toBe('pokemon-one-url')
     expect(secondImage?.getAttribute('src')).toBe('pokemon-two-url')
   })
+
+  it('should render a pokemon with its pokemon types commas separated', async () => {
+    const pokemons = [
+      {
+        id: 1,
+        name: 'pokemon one',
+        imageUrl: 'pokemon-one-url',
+        types: [
+          { id: 1, name: 'grass' },
+          { id: 2, name: 'water' }
+        ]
+      }
+    ]
+
+    render(<Pokemons pokemons={pokemons} />)
+
+    screen.getByText('grass, water')
+  })
 })
