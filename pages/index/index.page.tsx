@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { IndexPage } from '../../components/IndexPage'
+
 import { PokemonList, PokemonTypesList } from '../../types'
 
 interface Props {
@@ -13,7 +15,7 @@ export const Page: React.FC<Props> = ({ pokemons }) => {
     <>
       <h1>Poké Catalog Challenge</h1>
 
-      {JSON.stringify(pokemons)}
+      <IndexPage pokemons={pokemons} />
     </>
   )
 }
