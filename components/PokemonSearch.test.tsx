@@ -5,6 +5,8 @@ import userEvent from '@testing-library/user-event'
 
 import { PokemonSearch } from './PokemonSearch'
 
+import { FiltersProvider } from '../context/filters'
+
 describe('PokemonSearch', () => {
   beforeEach(cleanup)
 
@@ -15,7 +17,11 @@ describe('PokemonSearch', () => {
   it('should allow writing text in a text box', async () => {
     const user = userEvent.setup()
 
-    render(<PokemonSearch />)
+    render(
+      <FiltersProvider>
+        <PokemonSearch />
+      </FiltersProvider>
+    )
 
     const input = screen.getByPlaceholderText('Name or number')
 
