@@ -29,6 +29,9 @@ export async function render (pageContext: PageContextServer) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Nunito:wght@400;700;800&display=swap');
+        </style>
       </head>
       <body>
         <div id="page-view">${dangerouslySkipEscape(pageHtml)}</div>
