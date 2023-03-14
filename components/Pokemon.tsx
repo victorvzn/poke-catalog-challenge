@@ -30,14 +30,18 @@ export const Pokemon: React.FC<Props> = ({ pokemon }) => {
             ? (
               <button
                 data-testid='is-favorite'
-                onClick={() => removeFavorite(pokemon)}
+                onClick={() => {
+                  removeFavorite(pokemon)
+                }}
               >
                 <PokeBallIcon />
               </button>
               )
             : (
               <button
-                onClick={() => addFavorite(pokemon)}
+                onClick={() => {
+                  addFavorite(pokemon)
+                }}
               >
                 <PokeBallDisabledIcon />
               </button>
