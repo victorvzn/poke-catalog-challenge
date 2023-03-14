@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 }
 
 interface FormState {
-  inputValue: PokemonFilter
+  inputValues: PokemonFilter
 }
 
 interface Props {
@@ -19,18 +19,18 @@ interface Props {
 }
 
 export const PokemonSearch: React.FC<Props> = ({ types }) => {
-  const [inputValue, setInputValue] = useState<FormState['inputValue']>(INITIAL_STATE)
+  const [inputValues, setInputValues] = useState<FormState['inputValues']>(INITIAL_STATE)
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target
 
-    setInputValue(prevState => ({ ...prevState, [name]: value }))
+    setInputValues(prevState => ({ ...prevState, [name]: value }))
   }
 
   const handleChangeType = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const { name, value } = event.target
 
-    setInputValue(prevState => ({ ...prevState, [name]: Number(value) }))
+    setInputValues(prevState => ({ ...prevState, [name]: Number(value) }))
   }
 
   return (
@@ -41,7 +41,7 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
           type='text'
           placeholder='Name or number'
           onChange={handleChangeInput}
-          value={inputValue.name}
+          value={inputValues.name}
         />
       </label>
 
@@ -49,7 +49,7 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
         <select
           name='type'
           onChange={handleChangeType}
-          value={inputValue?.type}
+          value={inputValues?.type}
         >
           <option value='0'>Select a type</option>
           {types?.map(type => (
