@@ -10,7 +10,6 @@ interface Props {
 }
 
 export const Page: React.FC<Props> = ({ pokemons, types }) => {
-  console.log(pokemons)
   return (
     <>
       <h1>Poké Catalog Challenge</h1>
