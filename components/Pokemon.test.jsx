@@ -8,7 +8,7 @@ import { Pokemon } from './Pokemon'
 describe('Pokemon', () => {
   beforeEach(cleanup)
 
-  it('should add a pokemon to favorites', async () => {
+  it('should add items to a favorites list', async () => {
     const user = userEvent.setup()
 
     const mockPokemons = {
