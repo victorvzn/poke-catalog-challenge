@@ -11,7 +11,7 @@ export const Pokemons: React.FC<Props> = ({ pokemons }) => {
     <>
       {pokemons?.map(pokemon => {
         const pokemonTypes = pokemon.types?.map(type => type.name)
-        console.log(pokemon.types)
+        // console.log(pokemon.types)
         return (
           <div key={pokemon.id}>
             {pokemon.name}
