@@ -86,4 +86,26 @@ describe('PokemonSearch', () => {
 
     expect(comboBoxOptions).toHaveLength(4)
   })
+
+  it('should show a selected value after selecting a pokemon type', async () => {
+    const user = userEvent.setup()
+
+    const mockTypes = [
+      { id: 1, name: 'grass' },
+      { id: 2, name: 'water' },
+      { id: 3, name: 'fire' }
+    ]
+
+    const SELECTED_VALUE = '2'
+
+    render(<PokemonSearch types={mockTypes} />)
+
+    const comboBox = screen.getByRole('combobox')
+
+    await user.selectOptions(comboBox, SELECTED_VALUE)
+
+    const optionWater = screen.getByRole('option', { name: 'water' })
+
+    expect(optionWater.getAttribute('value')).toBe(SELECTED_VALUE)
+  })
 })
