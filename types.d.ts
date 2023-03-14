@@ -24,6 +24,4 @@ export interface PokemonContextType {
   filters: PokemonFilter
   setFilters: (filters: PokemonFilter) => void
   filterPokemons?: (pokemons: PokemonList) => PokemonList
-  count: number
-  setCount: (count: number) => void
 }

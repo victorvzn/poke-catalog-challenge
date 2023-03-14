@@ -1,7 +1,8 @@
 import React from 'react'
 import { render, screen, cleanup } from '@testing-library/react'
-import { describe, it, beforeEach, expect } from 'vitest'
-import userEvent from '@testing-library/user-event'
+import { describe, it, beforeEach } from 'vitest'
+
+import { PokemonResults } from './PokemonResults'
 
 describe('PokemonResults', () => {
   beforeEach(cleanup)

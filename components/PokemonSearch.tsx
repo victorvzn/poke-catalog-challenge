@@ -1,14 +1,13 @@
 import React from 'react'
 import { useFilters } from '../hooks/useFilters'
 import { PokemonTypesList } from '../types'
-import { PokemonResults } from './PokemonResults'
 
 interface Props {
   types?: PokemonTypesList
 }
 
 export const PokemonSearch: React.FC<Props> = ({ types }) => {
-  const { filters, setFilters, count } = useFilters()
+  const { filters, setFilters } = useFilters()
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target
@@ -51,9 +50,6 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
           ))}
         </select>
       </label>
-      <div>
-        <PokemonResults count={count} />
-      </div>
     </form>
   )
 }
