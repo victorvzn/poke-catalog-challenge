@@ -6,7 +6,7 @@
     "server": "ts-node ./server/index.ts",
     "server:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "@types/compression": "1.7.2",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
+    "conventional-changelog-cli": "2.2.2",
     "jsdom": "21.1.1",
     "sass": "1.59.2",
     "ts-standard": "12.0.2",
