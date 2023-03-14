@@ -3,20 +3,6 @@ import { render, screen, cleanup } from '@testing-library/react'
 import { describe, it, beforeEach, expect } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
-interface Props {
-  count: number
-}
-
-const PokemonResults: React.FC<Props> = ({ count }) => {
-  const countPadded = String(count).padStart(2, '0')
-
-  return (
-    <span>
-      Showing <strong>{countPadded}</strong> results
-    </span>
-  )
-}
-
 describe('PokemonResults', () => {
   beforeEach(cleanup)
 

@@ -4,14 +4,14 @@ import { PokemonContextType, PokemonList } from '../types'
 
 export const useFilters = (): PokemonContextType => {
   // const [filters, setFilters] = useState<useFiltersState['filters']>(INITIAL_FILTER_STATE)
-  const { filters, setFilters } = useContext(FiltersContext)
+  const { filters, setFilters, count, setCount } = useContext(FiltersContext)
 
   const filterPokemons = (pokemons: PokemonList): PokemonList => {
     if (filters?.name === undefined && filters?.type === undefined) {
       return pokemons
     }
 
-    return pokemons.filter(pokemon => {
+    const filteredPokemons = pokemons.filter(pokemon => {
       const pokemonIdTypes = pokemon.types?.map(type => type.id)
 
       const filterByname = filters.name === '' || pokemon.name?.includes(filters.name)
@@ -19,11 +19,17 @@ export const useFilters = (): PokemonContextType => {
 
       return filterByname && filterByType
     })
+
+    setCount(filteredPokemons.length ?? 0)
+
+    return filteredPokemons
   }
 
   return {
     filters,
     setFilters,
-    filterPokemons
+    filterPokemons,
+    count,
+    setCount
   }
 }
