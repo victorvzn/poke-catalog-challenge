@@ -6,7 +6,8 @@ import userEvent from '@testing-library/user-event'
 import { PokemonFilter, PokemonTypesList } from '../types'
 
 const INITIAL_STATE = {
-  name: ''
+  name: '',
+  type: 0
 }
 
 interface FormState {
@@ -26,6 +27,12 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
     setInputValue(prevState => ({ ...prevState, [name]: value }))
   }
 
+  const handleChangeType = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    const { name, value } = event.target
+
+    setInputValue(prevState => ({ ...prevState, [name]: Number(value) }))
+  }
+
   return (
     <form>
       <label>
@@ -39,7 +46,11 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
       </label>
 
       <label>
-        <select name='type'>
+        <select
+          name='type'
+          onChange={handleChangeType}
+          value={inputValue?.type}
+        >
           <option value='0'>Select a type</option>
           {types?.map(type => (
             <option key={type.id} value={type.id}>{type.name}</option>
