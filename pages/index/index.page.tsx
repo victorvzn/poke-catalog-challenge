@@ -9,13 +9,13 @@ interface Props {
   types: PokemonTypesList
 }
 
-export const Page: React.FC<Props> = ({ pokemons }) => {
+export const Page: React.FC<Props> = ({ pokemons, types }) => {
   console.log(pokemons)
   return (
     <>
       <h1>Poké Catalog Challenge</h1>
 
-      <IndexPage pokemons={pokemons} />
+      <IndexPage pokemons={pokemons} types={types} />
     </>
   )
 }
