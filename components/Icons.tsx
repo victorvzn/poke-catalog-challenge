@@ -1,5 +1,9 @@
 import React from 'react'
 
+interface Props {
+  stroke?: string
+}
+
 export const PokeBallIcon: React.FC = () => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='none'><g clip-path='url(#a)'><path fill='#ED5564' d='M26.9 8.55a13.956 13.956 0 0 0-3-4.45A13.97 13.97 0 0 0 14 0a13.958 13.958 0 0 0-9.9 4.1A13.958 13.958 0 0 0 0 14a13.957 13.957 0 0 0 4.1 9.9A13.945 13.945 0 0 0 14 28a13.959 13.959 0 0 0 9.9-4.1A13.957 13.957 0 0 0 28 14c0-1.89-.37-3.723-1.1-5.45Z' /><path fill='#E6E9ED' d='M.006 14.393A13.958 13.958 0 0 0 4.1 23.9a13.942 13.942 0 0 0 4.45 3c1.726.73 3.56 1.1 5.449 1.1a13.957 13.957 0 0 0 9.9-4.1 13.957 13.957 0 0 0 4.095-9.506H.005Z' /><path fill='#434A54' d='M27.933 15.38a14.234 14.234 0 0 0-.017-2.927c-.695.107-1.694.247-2.953.386-2.39.263-6.23.578-10.963.578-4.733 0-8.574-.315-10.963-.578a69.378 69.378 0 0 1-2.953-.386 14.2 14.2 0 0 0-.017 2.926c2.27.342 7.275.954 13.933.954 6.658 0 11.662-.612 13.933-.954Z' /><path fill='#E6E9ED' d='M16.917 14.583a2.917 2.917 0 1 1-5.834 0 2.917 2.917 0 0 1 5.834 0Z' /><path fill='#434A54' d='M14 9.333a5.256 5.256 0 0 0-5.25 5.25 5.256 5.256 0 0 0 5.25 5.25 5.256 5.256 0 0 0 5.25-5.25A5.256 5.256 0 0 0 14 9.333Zm0 7.584a2.337 2.337 0 0 1-2.333-2.334A2.336 2.336 0 0 1 14 12.25a2.335 2.335 0 0 1 2.333 2.333A2.336 2.336 0 0 1 14 16.917Z' /><path fill='#fff' d='M26.9 8.55a13.956 13.956 0 0 0-3-4.45A13.97 13.97 0 0 0 13.417.012 13.943 13.943 0 0 1 22.733 4.1a13.957 13.957 0 0 1 4.1 9.9 13.958 13.958 0 0 1-4.1 9.9 13.93 13.93 0 0 1-4.45 3 13.886 13.886 0 0 1-4.866 1.088A13.92 13.92 0 0 0 19.45 26.9a13.96 13.96 0 0 0 4.45-3A13.958 13.958 0 0 0 28 14c0-1.89-.37-3.723-1.1-5.45Z' opacity='.2' /><path fill='#000' d='M1.1 19.45a13.957 13.957 0 0 0 3 4.45A13.945 13.945 0 0 0 14 28c.195 0 .39-.004.583-.012A13.943 13.943 0 0 1 5.267 23.9 13.96 13.96 0 0 1 1.167 14a13.951 13.951 0 0 1 4.1-9.9A13.95 13.95 0 0 1 14.583.013 13.911 13.911 0 0 0 8.55 1.101a13.952 13.952 0 0 0-4.45 3A13.951 13.951 0 0 0 0 14c0 1.89.37 3.723 1.1 5.449Z' opacity='.1' /></g><defs><clipPath id='a'><path fill='#fff' d='M0 0h28v28H0z' /></clipPath></defs></svg>
@@ -36,14 +40,15 @@ export const ChevronDownIcon: React.FC = () => {
   )
 }
 
-export const ListIcon: React.FC = () => {
+export const ListIcon: React.FC<Props> = ({ stroke = '#BFBFBF' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'><path stroke='#BFBFBF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'><path stroke={stroke} stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01' /></svg>
   )
 }
-export const ColumnsIcon: React.FC = () => {
+
+export const ColumnsIcon: React.FC<Props> = ({ stroke = '#BFBFBF' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'><path stroke='#BFBFBF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'><path stroke={stroke} stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18' /></svg>
   )
 }
 
