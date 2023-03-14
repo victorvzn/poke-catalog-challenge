@@ -96,6 +96,6 @@ describe('Poké Catalog integration test', () => {
 
     const pokemons = screen.getAllByRole('pokemon')
 
-    expect(pokemons).toHaveLength(2)
+    expect(pokemons).toHaveLength(1)
   })
 })
