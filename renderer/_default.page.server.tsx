@@ -18,8 +18,8 @@ export async function render (pageContext: PageContextServer) {
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports
-  const title = ((documentProps != null) && documentProps.title) || 'Vite SSR app'
-  const desc = ((documentProps != null) && documentProps.description) || 'App using Vite + vite-plugin-ssr'
+  const title = ((documentProps != null) && documentProps.title) || 'Poké Catalog'
+  const desc = ((documentProps != null) && documentProps.description) || 'App using Vite + vite-plugin-ssr + React.js + SASS'
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">

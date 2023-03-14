@@ -80,13 +80,13 @@ export const ArrowLeftIcon: React.FC = () => {
 
 export const SunIcon: React.FC = () => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'><g stroke='#000' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.667' clipPath='url(#a)'><path d='M10 14.167a4.167 4.167 0 1 0 0-8.334 4.167 4.167 0 0 0 0 8.334ZM10 .833V2.5M10 17.5v1.667M3.517 3.517 4.7 4.7M15.3 15.3l1.183 1.183M.833 10H2.5M17.5 10h1.667M3.517 16.483 4.7 15.3M15.3 4.7l1.183-1.183' /></g><defs><clipPath id='a'><path fill='#fff' d='M0 0h20v20H0z' /></clipPath></defs></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'><g stroke='#fff' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.667' clipPath='url(#a)'><path d='M10 14.167a4.167 4.167 0 1 0 0-8.334 4.167 4.167 0 0 0 0 8.334ZM10 .833V2.5M10 17.5v1.667M3.517 3.517 4.7 4.7M15.3 15.3l1.183 1.183M.833 10H2.5M17.5 10h1.667M3.517 16.483 4.7 15.3M15.3 4.7l1.183-1.183' /></g><defs><clipPath id='a'><path fill='#fff' d='M0 0h20v20H0z' /></clipPath></defs></svg>
   )
 }
 
 export const MoonIcon: React.FC = () => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'><path stroke='#000' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.667' d='M17.5 10.658A7.5 7.5 0 1 1 9.342 2.5a5.833 5.833 0 0 0 8.158 8.158Z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'><path stroke='#fff' strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.667' d='M17.5 10.658A7.5 7.5 0 1 1 9.342 2.5a5.833 5.833 0 0 0 8.158 8.158Z' /></svg>
   )
 }
 

@@ -9,9 +9,13 @@
 }
 
 .header__title {
+  padding-left: 15px;
+}
+
+.header__link {
   color: var(--primary-text-color);
   font-size: 25px;
-  padding-left: 15px;
+  text-decoration: none;
 }
 
 .header-buttons {
@@ -31,6 +35,10 @@
   margin: 0;
   cursor: pointer;
   transition: opacity .6s ease-in-out;
+}
+
+.header__icon--active {
+  background: var(--green-background-color);
 }
 
 .header__icon:hover {
