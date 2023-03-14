@@ -2,14 +2,12 @@ import React, { createContext, useState } from 'react'
 
 import { PokemonFilter, PokemonContextType } from '../types'
 
-const INITIAL_FILTER_STATE = { name: '', type: 0 }
+const INITIAL_FILTER_STATE = { name: '', type: 0, view: 'column' }
 
 export const FiltersContext = createContext<PokemonContextType>({
   filters: INITIAL_FILTER_STATE,
   setFilters: (filters: PokemonFilter) => {},
-  filterPokemons: (pokemons) => [],
-  count: 0,
-  setCount: (count: number) => 0
+  filterPokemons: (pokemons) => []
 })
 
 interface Props {
@@ -18,14 +16,11 @@ interface Props {
 
 export const FiltersProvider: React.FC<Props> = ({ children }) => {
   const [filters, setFilters] = useState<PokemonFilter>(INITIAL_FILTER_STATE)
-  const [count, setCount] = useState<number>(0)
 
   return (
     <FiltersContext.Provider value={{
       filters,
-      setFilters,
-      count,
-      setCount
+      setFilters
     }}
     >
       {children}

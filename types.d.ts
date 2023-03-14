@@ -15,6 +15,7 @@ export interface PokemonTypes {
 export interface PokemonFilter {
   name: string
   type: number
+  view: string
 }
 
 export type PokemonTypesList = PokemonTypes[]
