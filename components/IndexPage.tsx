@@ -4,6 +4,7 @@ import { PokemonList, PokemonTypesList } from '../types'
 
 import { PokemonSearch } from './PokemonSearch'
 import { Pokemons } from '../components/Pokemons'
+import { FiltersProvider } from '../context/filters'
 
 interface Props {
   pokemons: PokemonList
@@ -13,9 +14,11 @@ interface Props {
 export const IndexPage: React.FC<Props> = ({ pokemons, types }) => {
   return (
     <>
-      <PokemonSearch types={types} />
+      <FiltersProvider>
+        <PokemonSearch types={types} />
 
-      <Pokemons pokemons={pokemons} />
+        <Pokemons pokemons={pokemons} />
+      </FiltersProvider>
     </>
   )
 }

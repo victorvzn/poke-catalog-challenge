@@ -1,51 +1,48 @@
-import React, { useState } from 'react'
-import { PokemonFilter, PokemonTypesList } from '../types'
-
-const INITIAL_STATE = {
-  name: '',
-  type: 0
-}
-
-interface FormState {
-  inputValues: PokemonFilter
-}
+import React from 'react'
+import { useFilters } from '../hooks/useFilters'
+import { PokemonTypesList } from '../types'
 
 interface Props {
   types?: PokemonTypesList
 }
 
 export const PokemonSearch: React.FC<Props> = ({ types }) => {
-  const [inputValues, setInputValues] = useState<FormState['inputValues']>(INITIAL_STATE)
+  const { filters, setFilters } = useFilters()
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target
 
-    setInputValues(prevState => ({ ...prevState, [name]: value }))
+    setFilters({ ...filters, [name]: value })
   }
 
   const handleChangeType = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const { name, value } = event.target
 
-    setInputValues(prevState => ({ ...prevState, [name]: Number(value) }))
+    setFilters({ ...filters, [name]: Number(value) })
+  }
+
+  const handleFilter = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+
+    setFilters(filters)
   }
 
   return (
-    <form>
+    <form onSubmit={handleFilter}>
       <label>
         <input
           name='name'
           type='text'
           placeholder='Name or number'
           onChange={handleChangeInput}
-          value={inputValues.name}
+          value={filters?.name}
         />
       </label>
-
       <label>
         <select
           name='type'
           onChange={handleChangeType}
-          value={inputValues?.type}
+          value={filters?.type}
         >
           <option value='0'>Select a type</option>
           {types?.map(type => (

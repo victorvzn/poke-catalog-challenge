@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, cleanup } from '@testing-library/react'
-import { describe, it, beforeEach, expect, vi } from 'vitest'
+import { describe, it, beforeEach, expect } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
 import { IndexPage } from './IndexPage'
@@ -49,6 +49,6 @@ describe('Poké Catalog integration test', () => {
     await user.clear(input)
 
     await user.type(input, 'll')
-    expect(screen.getAllByRole('pokemon')).toHaveLength(5)
+    expect(screen.getAllByRole('pokemon')).toHaveLength(2)
   })
 })

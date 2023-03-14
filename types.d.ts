@@ -18,3 +18,9 @@ export interface PokemonFilter {
 }
 
 export type PokemonTypesList = PokemonTypes[]
+
+export interface PokemonContextType {
+  filters: PokemonFilter
+  setFilters: (filters: PokemonFilter) => void
+  filterPokemons?: (pokemons: PokemonList) => PokemonList
+}
