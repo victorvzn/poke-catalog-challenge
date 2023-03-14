@@ -20,7 +20,6 @@ export const Header: React.FC = () => {
       </h1>
 
       <div className='header-buttons'>
-        {theme}
         <figure
           className={`header__icon ${(theme === 'dark') ? 'header__icon--active' : ''}`} onClick={() => {
             localStorage.setItem('theme', 'dark')
