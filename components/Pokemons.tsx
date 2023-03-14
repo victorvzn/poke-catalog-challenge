@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Pokemon } from './Pokemon'
+
 import { PokemonList } from '../types'
 
 interface Props {
@@ -9,17 +11,9 @@ interface Props {
 export const Pokemons: React.FC<Props> = ({ pokemons }) => {
   return (
     <>
-      {pokemons?.map(pokemon => {
-        const pokemonTypes = pokemon.types?.map(type => type.name)
-        // console.log(pokemon.types)
-        return (
-          <div key={pokemon.id}>
-            {pokemon.name}
-            <div>{pokemonTypes?.join(', ')}</div>
-            <img src={pokemon.imageUrl} />
-          </div>
-        )
-      })}
+      {pokemons?.map(pokemon => (
+        <Pokemon key={pokemon.id} pokemon={pokemon} />
+      ))}
     </>
   )
 }
