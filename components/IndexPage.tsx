@@ -15,9 +15,19 @@ export const IndexPage: React.FC<Props> = ({ pokemons, types }) => {
   return (
     <>
       <FiltersProvider>
-        <PokemonSearch types={types} />
+        <main className='container'>
+          <section className='container__section'>
 
-        <Pokemons pokemons={pokemons} />
+            <PokemonSearch types={types} />
+
+            <Pokemons pokemons={pokemons} />
+
+          </section>
+        </main>
+
+        <footer className='footer'>
+          <a href='https://victorvillazon.com'>Victor Villazón</a> - <strong>March 2023</strong>
+        </footer>
       </FiltersProvider>
     </>
   )

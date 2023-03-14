@@ -1,0 +1,22 @@
+.container {
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  
+  @include tablet {
+    max-width: var(--container-max-width);
+  }
+  
+  @include desktop {
+    max-width: var(--container-max-width);
+  }
+}
+// .container {
+//   padding: 10px 20px;
+// }
+
+.container__section {
+  display: flex;
+  flex-direction: column;
+}
+

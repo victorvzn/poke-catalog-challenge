@@ -1,6 +1,9 @@
 import React from 'react'
 
+import '../../styles/index.scss'
+
 import { IndexPage } from '../../components/IndexPage'
+import { Header } from '../../components/Header'
 
 import { PokemonList, PokemonTypesList } from '../../types'
 
@@ -12,7 +15,7 @@ interface Props {
 export const Page: React.FC<Props> = ({ pokemons, types }) => {
   return (
     <>
-      <h1>Poké Catalog Challenge</h1>
+      <Header />
 
       <IndexPage pokemons={pokemons} types={types} />
     </>

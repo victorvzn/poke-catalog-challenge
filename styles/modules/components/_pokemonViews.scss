@@ -1,0 +1,11 @@
+
+.pokemon-views__buttons {
+  display: flex;
+  gap: 16px
+}
+
+.pokemon-views__buttons button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

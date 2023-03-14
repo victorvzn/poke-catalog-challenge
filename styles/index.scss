@@ -1,0 +1,12 @@
+@import './modules/mixins/_mixins';
+@import './modules/_variables';
+@import './modules/_general';
+@import './modules/layouts/containers';
+
+@import './modules/components/_header';
+@import './modules/components/_footer';
+@import './modules/components/_pokemonSearch';
+@import './modules/components/_pokemonResults';
+@import './modules/components/_pokemonViews';
+@import './modules/components/_pokemons';
+@import './modules/components/_pokemon';

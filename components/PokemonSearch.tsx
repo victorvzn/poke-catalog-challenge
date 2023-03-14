@@ -2,6 +2,8 @@ import React from 'react'
 import { useFilters } from '../hooks/useFilters'
 import { PokemonTypesList } from '../types'
 
+import { SearchIcon, FilterIcon } from './Icons'
+
 interface Props {
   types?: PokemonTypesList
 }
@@ -28,9 +30,11 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
   }
 
   return (
-    <form onSubmit={handleFilter}>
-      <label>
+    <form className='search-form' onSubmit={handleFilter}>
+      <label className='search-form__container' htmlFor='search'>
+        <SearchIcon />
         <input
+          id='search'
           name='name'
           type='text'
           placeholder='Name or number'
@@ -38,9 +42,12 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
           value={filters?.name}
         />
       </label>
-      <label>
+      <label className='search-form__container' htmlFor='filter'>
+        <FilterIcon />
         <select
+          id='filter'
           name='type'
+          placeholder='Filter by type'
           onChange={handleChangeType}
           value={filters?.type}
         >

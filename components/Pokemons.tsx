@@ -19,15 +19,17 @@ export const Pokemons: React.FC<Props> = ({ pokemons }) => {
 
   return (
     <>
-      <div>
+      <div className='pokemon-results'>
         <PokemonResults count={filteredPokemons?.length} />
 
         <PokemonView />
       </div>
 
-      {filteredPokemons?.map(pokemon => (
-        <Pokemon key={pokemon.id} pokemon={pokemon} />
-      ))}
+      <div className='pokemons'>
+        {filteredPokemons?.map(pokemon => (
+          <Pokemon key={pokemon.id} pokemon={pokemon} />
+        ))}
+      </div>
     </>
   )
 }

@@ -6,50 +6,67 @@ import { useFilters } from '../hooks/useFilters'
 
 import { useFavoritesStore } from '../stores/useFavorites'
 
-import { PokeBallIcon, PokeBallDisabledIcon } from '../components/Icons'
+import { PokeBallIcon, PokeBallDisabledIcon, PokeBallIconActive, HeartIcon } from '../components/Icons'
 
 interface Props {
   pokemon: PokemonType
 }
 
 export const Pokemon: React.FC<Props> = ({ pokemon }) => {
-  const pokemonTypes = pokemon.types?.map(type => type.name)
   const { filters } = useFilters()
   const { favorites, addFavorite, removeFavorite } = useFavoritesStore((state) => state)
 
   const isFavorite = favorites.some(favorite => favorite.id === pokemon.id)
 
+  const idPadded = String(pokemon.id).padStart(4, '0')
+
   return (
     <>
       <div
         role='pokemon'
-        className={filters.view === 'list' ? 'is-collapsable' : ''}
+        className={`pokemon ${filters.view === 'list' ? 'is-collapsable' : ''} ${isFavorite ? 'pokemon--selected' : ''}`}
       >
-        {
+        <div className='pokemon__header'>
+          <div className='pokemon__info '>
+            <figure className='pokemon__image--small'>
+              <img src={pokemon.imageUrl} loading='lazy' width={54} height={54} alt={`Pokemon ${pokemon.name} image`} />
+            </figure>
+            <div>
+              <div className='pokemon__info--title'>
+                <strong className='pokemon__number'>#{idPadded}</strong>
+                <span className='pokemon__name'>{pokemon.name}</span>
+              </div>
+              <div className='pokemon__types'>
+                {pokemon.types?.map(type => (
+                  <span className='pokemon__types--tag' key={type.id}>{type.name}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          {
           isFavorite
             ? (
               <button
+                className='pokemon__favorite'
                 data-testid='is-favorite'
-                onClick={() => {
-                  removeFavorite(pokemon)
-                }}
+                onClick={() => { removeFavorite(pokemon) }}
               >
-                <PokeBallIcon />
+                <HeartIcon />
               </button>
               )
             : (
               <button
-                onClick={() => {
-                  addFavorite(pokemon)
-                }}
+                className='pokemon__favorite'
+                onClick={() => { addFavorite(pokemon) }}
               >
-                <PokeBallDisabledIcon />
+                <PokeBallIconActive />
               </button>
               )
         }
-        <h3>{pokemon.name}</h3>
-        <div>{pokemonTypes?.join(', ')}</div>
-        <img src={pokemon.imageUrl} loading='lazy' />
+        </div>
+        <figure className='pokemon__image'>
+          <img src={pokemon.imageUrl} loading='lazy' width={200} height={200} alt={`Pokemon ${pokemon.name} image`} />
+        </figure>
       </div>
     </>
   )
