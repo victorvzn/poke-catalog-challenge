@@ -11,7 +11,6 @@ export const PokemonView: React.FC<Props> = () => {
 
   return (
     <span>
-      {JSON.stringify(filters)}
       <button onClick={() => setFilters({ ...filters, view: 'column' })}>
         <ColumnsIcon stroke={(filters.view === 'column') ? '#353535' : '#BFBFBF'} />
       </button>
