@@ -12,8 +12,8 @@ export interface PokemonTypes {
   name: string
 }
 
-export type PokemonTypesList = PokemonTypes[]
-
 export interface PokemonFilter {
   name: string
 }
+
+export type PokemonTypesList = PokemonTypes[]

@@ -3,7 +3,7 @@ import { render, screen, cleanup, within } from '@testing-library/react'
 import { describe, it, beforeEach, expect, vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
-import { PokemonFilter } from '../types'
+import { PokemonFilter, PokemonTypesList } from '../types'
 
 const INITIAL_STATE = {
   name: ''
@@ -13,7 +13,11 @@ interface FormState {
   inputValue: PokemonFilter
 }
 
-export const PokemonSearch: React.FC = () => {
+interface Props {
+  types?: PokemonTypesList
+}
+
+export const PokemonSearch: React.FC<Props> = ({ types }) => {
   const [inputValue, setInputValue] = useState<FormState['inputValue']>(INITIAL_STATE)
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -32,6 +36,15 @@ export const PokemonSearch: React.FC = () => {
           onChange={handleChangeInput}
           value={inputValue.name}
         />
+      </label>
+
+      <label>
+        <select name='type'>
+          <option value='0'>Select a type</option>
+          {types?.map(type => (
+            <option key={type.id} value={type.id}>{type.name}</option>
+          ))}
+        </select>
       </label>
     </form>
   )
