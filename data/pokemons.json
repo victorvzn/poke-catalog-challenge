@@ -141,7 +141,7 @@
     "name": "butterfree",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -156,7 +156,7 @@
     "name": "weedle",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -171,7 +171,7 @@
     "name": "kakuna",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -186,7 +186,7 @@
     "name": "beedrill",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -587,7 +587,7 @@
     "name": "paras",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -602,7 +602,7 @@
     "name": "parasect",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -617,7 +617,7 @@
     "name": "venonat",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -632,7 +632,7 @@
     "name": "venomoth",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
@@ -1562,7 +1562,7 @@
     "name": "scyther",
     "types": [
       {
-        "id": 17,
+        "id": 7,
         "name": "bug"
       },
       {
