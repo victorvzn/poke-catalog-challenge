@@ -1,5 +1,7 @@
 # Poké Catalog
 
+Gracias por visitar este repositorio, abajo encontrá algunas instrucciones de como instalar, usar este proyecto y los objetivos terminados ensu totalidad.
+
 ### Requermientos
 
 * Node.js v18.12.1
@@ -60,9 +62,9 @@ Tecnologías a utilizar:
 * [x] Pre procesador de CSS
 * [x] Express.js
 
-* [ ] Hacer despliegue en Heroku o cualquier servicio similar
-* [ ] (recuerda incluir el link al despliegue en el README o descripción del proyecto).
-* [ ] Si usas variables de entorno, puedes enviarlas por correo.
+* [x] Hacer despliegue en Heroku o cualquier servicio similar
+* [x] (recuerda incluir el link al despliegue en el README o descripción del proyecto).
+* [ ] ~~Si usas variables de entorno, puedes enviarlas por correo.~~
 
 ### Puntos adicionales
 
