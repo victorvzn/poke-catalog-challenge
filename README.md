@@ -1,8 +1,21 @@
-# Poké Catalog
+# Poké Catalog - Challenge
 
-Gracias por visitar este repositorio, abajo encontrá algunas instrucciones de como instalar, usar este proyecto y los objetivos terminados ensu totalidad.
+Gracias por visitar este repositorio, abajo encontrará las instrucciones de como instalar y usar este proyecto.
 
-**Link:** https://poke-catalog-challenge.netlify.app/
+**Deploy link :** https://poke-catalog-challenge.netlify.app/
+
+Disfruté mucho el proceso de desarrollo de este reto ya que fue desafiante, sobretodo al enfocarme en la calidad y mejores prácticas con lo que pude llegar a una solución estable y lista para escalar.
+
+Sobre los tests, se encuentran en el [directorio components](https://github.com/victorvzn/poke-catalog-challenge/tree/main/components) o en el directorio [cypress/e2e](https://github.com/victorvzn/poke-catalog-challenge/tree/main/cypress/e2e).
+
+### Tecnologías
+
+* Frontend tools: Vitejs, React.js, Zustand, Sass
+* Backend tools: Node.js. Express.js
+* SSR: vite-plugin-ssr
+* Testing: testing-library/react, vitest, jsdom, testing-library/user-event, cypress
+* Languages: Javascipt, Typescript
+* Linter: ESLint + ts-standard
 
 ### Requermientos
 
