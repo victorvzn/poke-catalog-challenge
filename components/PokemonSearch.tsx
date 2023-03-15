@@ -37,7 +37,7 @@ export const PokemonSearch: React.FC<Props> = ({ types }) => {
           id='search'
           name='name'
           type='text'
-          placeholder='Name or number'
+          placeholder='Pokemon Name'
           onChange={handleChangeInput}
           value={filters?.name}
         />

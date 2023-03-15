@@ -41,7 +41,7 @@ describe('Poké Catalog integration test', () => {
 
     render(<IndexPage pokemons={mockPokemons} types={[]} />)
 
-    const input = screen.getByPlaceholderText('Name or number')
+    const input = screen.getByPlaceholderText('Pokemon Name')
 
     await user.type(input, 'pikachu')
     expect(screen.getAllByRole('pokemon')).toHaveLength(1)

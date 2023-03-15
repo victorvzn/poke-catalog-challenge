@@ -14,7 +14,7 @@ describe('Poké catalog', () => {
 
     cy.get('.pokemon-results').contains('Showing 151 results')
 
-    cy.get('input[placeholder="Name or number"]').type('geo')
+    cy.get('input[placeholder="Pokemon Name"]').type('geo')
 
     cy.get('.pokemons .pokemon').should('have.length', 3)
 
@@ -39,7 +39,7 @@ describe('Poké catalog', () => {
 
     // Clean search
 
-    cy.get('input[placeholder="Name or number"]').clear()
+    cy.get('input[placeholder="Pokemon Name"]').clear()
     cy.get('select').select('Select a type')
 
     cy.get('.pokemon-results').contains('Showing 151 results')

@@ -23,7 +23,7 @@ describe('PokemonSearch', () => {
       </FiltersProvider>
     )
 
-    const input = screen.getByPlaceholderText('Name or number')
+    const input = screen.getByPlaceholderText('Pokemon Name')
 
     await user.type(input, 'oops{backspace}{backspace}{backspace}{backspace}geodude')
 
