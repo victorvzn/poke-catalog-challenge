@@ -1,12 +1,38 @@
 # Poké Catalog
 
-### Puntos adicionales
+### Requermientos
 
-* [x] Instalar linter para manejo de errores y formato de código
-* [x] Instalación del testing environment
-* [x] Instalación de SAAS
+* Node.js v18.12.1
 
-### Objetivos del reto
+### Cómo usar esta aplicación
+
+Hay que instalar las dependencias incluidas en el package.json, no se usan variables de entorno.
+
+```bash
+npm install
+```
+
+**Tests:** Para correr los test unitarios y de integración se debe ejecutar el siguiente script:
+
+```bash
+npm test
+```
+
+**E2E:** Para correr los test e2e se deben ejecutar los siguientes scripts, por separado:
+
+```bash
+npm run dev
+
+npm test:e2e
+```
+
+| **Note e2e:** Si necesita ejecutar la UI de cypress puede usar el script:
+
+```bash
+npm test:e2eui
+```
+
+### Objetivos del reto logrados
 
 Realizar un catálogo de elementos usando una API pública que cumpla con los siguientes criterios:
 
@@ -25,7 +51,7 @@ Adicionalmente la aplicación web debe contar con:
 
 * [x] Pruebas Unitarias
 * [x] Pruebas de Integración
-* [ ] Pruebas E2E
+* [x] Pruebas E2E
 
 Tecnologías a utilizar:
 
@@ -37,3 +63,9 @@ Tecnologías a utilizar:
 * [ ] Hacer despliegue en Heroku o cualquier servicio similar
 * [ ] (recuerda incluir el link al despliegue en el README o descripción del proyecto).
 * [ ] Si usas variables de entorno, puedes enviarlas por correo.
+
+### Puntos adicionales
+
+* [x] Instalar linter para manejo de errores y formato de código
+* [x] Instalación del testing environment
+* [x] Instalación de SAAS
