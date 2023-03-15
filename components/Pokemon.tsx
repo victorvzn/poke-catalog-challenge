@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Pokemon as PokemonType } from '../types'
 
@@ -16,7 +16,7 @@ export const Pokemon: React.FC<Props> = ({ pokemon }) => {
   const { filters } = useFilters()
   const { favorites, addFavorite, removeFavorite } = useFavoritesStore((state) => state)
 
-  const isFavorite = favorites.some(favorite => favorite.id === pokemon.id)
+  const isFavorite = favorites?.some(favorite => favorite.id === pokemon.id)
 
   const idPadded = String(pokemon.id).padStart(4, '0')
 
@@ -47,7 +47,7 @@ export const Pokemon: React.FC<Props> = ({ pokemon }) => {
           isFavorite
             ? (
               <button
-                className='pokemon__favorite'
+                className='pokemon__favorite is-favorite'
                 data-testid='is-favorite'
                 onClick={() => { removeFavorite(pokemon) }}
               >
