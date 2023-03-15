@@ -3,6 +3,7 @@
 Gracias por visitar este repositorio, abajo encontrará las instrucciones de como instalar y usar este proyecto.
 
 **Deploy link :** https://poke-catalog-challenge.netlify.app/
+**Figma UI:** [link](https://www.figma.com/file/1as86VabOrb8kS67SmqC7d/Pok%C3%A9dex23?node-id=0%3A1&t=1Dd42ASQBQI2cQel-1)
 
 Disfruté mucho el proceso de desarrollo de este reto ya que fue desafiante, sobretodo al enfocarme en la calidad y mejores prácticas con lo que pude llegar a una solución estable y lista para escalar.
 
