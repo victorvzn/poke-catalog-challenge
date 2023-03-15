@@ -14,7 +14,10 @@ export const useFilters = (): PokemonContextType => {
     return pokemons.filter(pokemon => {
       const pokemonIdTypes = pokemon.types?.map(type => type.id)
 
-      const filterByname = filters.name === '' || pokemon.name?.includes(filters.name)
+      const pokemonNameLowered = pokemon.name.toLocaleLowerCase()
+      const filtersNameLowered = filters.name.toLocaleLowerCase()
+
+      const filterByname = filters.name === '' || pokemonNameLowered?.includes(filtersNameLowered)
       const filterByType = filters.type === 0 || pokemonIdTypes?.includes(Number(filters?.type))
 
       return filterByname && filterByType
