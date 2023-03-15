@@ -64,9 +64,11 @@ describe('Pokemons', () => {
 
     screen.getByText('pokemon one')
 
-    const image = screen.getByRole('img')
+    const images = screen.getAllByRole('img')
 
-    expect(image.getAttribute('src')).toBe('pokemon-one-url')
+    images.forEach(image => {
+      expect(image.getAttribute('src')).toBe('pokemon-one-url')
+    })
   })
 
   it('should render multiple pokemon with its url image each one', () => {
@@ -87,11 +89,16 @@ describe('Pokemons', () => {
 
     const images = screen.getAllByRole('img')
 
-    const firstImage = images.at(0)
-    const secondImage = images.at(1)
+    const a1Image = images.at(0)
+    const a2Image = images.at(1)
+    const b1Image = images.at(2)
+    const b2Image = images.at(3)
 
-    expect(firstImage?.getAttribute('src')).toBe('pokemon-one-url')
-    expect(secondImage?.getAttribute('src')).toBe('pokemon-two-url')
+    expect(a1Image?.getAttribute('src')).toBe('pokemon-one-url')
+    expect(a2Image?.getAttribute('src')).toBe('pokemon-one-url')
+
+    expect(b1Image?.getAttribute('src')).toBe('pokemon-two-url')
+    expect(b2Image?.getAttribute('src')).toBe('pokemon-two-url')
   })
 
   it('should render a pokemon with its pokemon types commas separated', async () => {
@@ -109,6 +116,7 @@ describe('Pokemons', () => {
 
     render(<Pokemons pokemons={pokemons} />)
 
-    expect(screen.getByText('grass, water')).toBeDefined()
+    expect(screen.getByText('grass')).toBeDefined()
+    expect(screen.getByText('water')).toBeDefined()
   })
 })
