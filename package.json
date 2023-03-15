@@ -6,6 +6,9 @@
     "server": "ts-node ./server/index.ts",
     "server:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts",
     "test": "vitest",
+    "test:e2e": "npx cypress run",
+    "test:e2eui": "npx cypress open",
+    "coverage": "vitest run --coverage",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
@@ -32,7 +35,9 @@
   "devDependencies": {
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
+    "@vitest/coverage-c8": "^0.29.2",
     "conventional-changelog-cli": "2.2.2",
+    "cypress": "12.8.0",
     "jsdom": "21.1.1",
     "sass": "1.59.2",
     "ts-standard": "12.0.2",
