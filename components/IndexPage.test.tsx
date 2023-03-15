@@ -50,6 +50,11 @@ describe('Poké Catalog integration test', () => {
 
     await user.type(input, 'll')
     expect(screen.getAllByRole('pokemon')).toHaveLength(2)
+
+    await user.clear(input)
+
+    await user.type(input, 'Ll')
+    expect(screen.getAllByRole('pokemon')).toHaveLength(2)
   })
 
   it('should filter pokemons by type', async () => {
