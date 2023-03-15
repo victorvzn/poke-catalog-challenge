@@ -7,8 +7,13 @@ export const Header: React.FC = () => {
   const [theme, setTheme] = useState('')
 
   useEffect(() => {
-    const tmp = window.localStorage.getItem('theme') ?? ''
-    setTheme(tmp)
+    const currentTheme = window.localStorage.getItem('theme') ?? ''
+    document.body.classList.add(currentTheme)
+  }, [])
+
+  useEffect(() => {
+    const currentTheme = window.localStorage.getItem('theme') ?? ''
+    setTheme(currentTheme)
   }, [theme])
 
   return (
